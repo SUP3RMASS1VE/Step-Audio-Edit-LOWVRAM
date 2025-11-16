@@ -29,7 +29,8 @@
         "chain": true,
         "input": null,
         "message": [
-          "uv pip install -r requirements.txt"
+          "uv pip install -r requirements.txt",
+          "uv pip install --force-reinstall onnxruntime"
         ]
       }
     },
