@@ -1,0 +1,59 @@
+{
+  "run": [
+    {
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "git clone https://github.com/SUP3RMASS1VE/Step-Audio-EditX app"
+        ]
+      }
+    },
+    {
+      "method": "script.start",
+      "params": {
+        "uri": "torch.js",
+        "params": {
+          "path": "app",
+          "venv": "venv",
+          "xformers": false,
+          "triton": false,
+          "sageattention": false
+        }
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "venv",
+        "path": "app",
+        "chain": true,
+        "input": null,
+        "message": [
+          "uv pip install -r requirements.txt"
+        ]
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "path": "app",
+        "message": "hf download stepfun-ai/Step-Audio-EditX --local-dir ./models/Step-Audio-EditX"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "path": "app",
+        "message": "hf download stepfun-ai/Step-Audio-Tokenizer --local-dir ./models/Step-Audio-Tokenizer"
+      }
+    },
+    {
+      "id": "end",
+      "method": "input",
+      "params": {
+        "title": "Install Complete!!",
+        "description": "Install Complete."
+      }
+    }
+  ]
+}
