@@ -37,14 +37,10 @@
       "method": "shell.run",
       "params": {
         "path": "app",
-        "message": "hf download stepfun-ai/Step-Audio-EditX --local-dir ./models/Step-Audio-EditX"
-      }
-    },
-    {
-      "method": "shell.run",
-      "params": {
-        "path": "app",
-        "message": "hf download stepfun-ai/Step-Audio-Tokenizer --local-dir ./models/Step-Audio-Tokenizer"
+        "message": [
+          "hf download stepfun-ai/Step-Audio-EditX --local-dir ./models/Step-Audio-EditX",
+          "hf download stepfun-ai/Step-Audio-Tokenizer --local-dir ./models/Step-Audio-Tokenizer"
+        ]
       }
     },
     {
